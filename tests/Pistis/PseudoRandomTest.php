@@ -15,12 +15,12 @@ class PseudoRandomTest extends AbstractTestCase
         PseudoRandom::seed(0);
     }
 
-    public function testAutomaticallySeeded(): void
+    public function testAutomaticallySeeded()
     {
         self::assertInternalType('integer', PseudoRandom::getSeed());
     }
 
-    public function testReproducibleInteger(): void
+    public function testReproducibleInteger()
     {
         PseudoRandom::seed(0xDEADBEEF);
 
@@ -30,7 +30,7 @@ class PseudoRandomTest extends AbstractTestCase
         self::assertSame(7199328709112801378, PseudoRandom::integer());
     }
 
-    public function testReproducibleHex(): void
+    public function testReproducibleHex()
     {
         PseudoRandom::seed(0xDEADBEEF);
 
@@ -40,7 +40,7 @@ class PseudoRandomTest extends AbstractTestCase
         self::assertSame('6c6c241dc001604214a7dc558f283c125ec675b12dbdac596b813ae4a4eb5ff7', PseudoRandom::hex(64));
     }
 
-    public function testSeedCanBeSetFromEnvironmentVariable(): void
+    public function testSeedCanBeSetFromEnvironmentVariable()
     {
         putenv('PISTIS_SEED=10');
 
