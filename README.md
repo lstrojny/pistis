@@ -1,4 +1,4 @@
-# Pistis - pseudo-random numbers/identifiers for reproducable builds
+# Pistis - pseudo-random numbers/identifiers for reproducable builds [![Build Status](https://travis-ci.org/lstrojny/pistis.svg?branch=master)](https://travis-ci.org/lstrojny/pistis)
 
 Code generation often uses random identifiers / numbers to generate identifiers that are free of collisions. These 
 random identifiers make reproducable builds impossible since there is no way to make the randomness deterministic.
