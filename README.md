@@ -9,7 +9,7 @@ To avoid that, **pistis** provides a simple interface to pseudo-random numbers a
 as part of identifiers enabling reproducable builds. Pistis allows passing a previous seed as an environment variable
 `PISTIS_SEED` for a second run.
 
-# Time
+## Time
 A second source of quasi randomness is time. Time info can be received by calling functions like `time()`. By replacing
 those functions with `Pistis\Clock::unixTimestamp()` one can fixate time for reproducible builds.
 
