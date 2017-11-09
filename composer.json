@@ -1,5 +1,5 @@
 {
-  "name": "lstroujny/pistis",
+  "name": "lstrojny/pistis",
   "description": "Seed based pseudo-randomness generation",
   "type": "library",
   "require-dev": {
