@@ -1,11 +1,17 @@
 # Pistis - Controlled pseudo-randomness and time for PHP [![Build Status](https://travis-ci.org/lstrojny/pistis.svg?branch=master)](https://travis-ci.org/lstrojny/pistis)
 
+## Pseudo-randomness
+
 Code generation often uses random identifiers / numbers to generate identifiers that are free of collisions. These 
 random identifiers make reproducable builds impossible since there is no way to make the randomness deterministic.
 
 To avoid that, **pistis** provides a simple interface to pseudo-random numbers and hexadecimal strings that can be used
 as part of identifiers enabling reproducable builds. Pistis allows passing a previous seed as an environment variable
 `PISTIS_SEED` for a second run.
+
+# Time
+A second source of quasi randomness is time. Time info can be received by calling functions like `time()`. By replacing
+those functions with `Pistis\Clock::unixTimestamp()` one can fixate time for reproducible builds.
 
 ```php
 <?php
