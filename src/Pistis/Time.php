@@ -29,6 +29,14 @@ final class Time
             return;
         }
 
+        $timestamp = filter_var(getenv('PISTIS_TIME'), FILTER_VALIDATE_INT);
+        if ($timestamp !== false) {
+            self::seed($timestamp);
+
+            return;
+        }
+
+
         self::$timestamp = time();
     }
 }

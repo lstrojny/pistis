@@ -20,4 +20,11 @@ class TimeTest extends AbstractTestCase
 
         $this->assertSame(2147483647, Time::unixTimestamp());
     }
+
+    public function testSeedFromEnvironment()
+    {
+        putenv('PISTIS_TIME=0');
+
+        $this->assertSame(0, Time::unixTimestamp());
+    }
 }
