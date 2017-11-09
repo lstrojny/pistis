@@ -1,4 +1,4 @@
-# Pistis - pseudo-random numbers/identifiers for reproducable builds [![Build Status](https://travis-ci.org/lstrojny/pistis.svg?branch=master)](https://travis-ci.org/lstrojny/pistis)
+# Pistis - Controlled pseudo-randomness and time for PHP [![Build Status](https://travis-ci.org/lstrojny/pistis.svg?branch=master)](https://travis-ci.org/lstrojny/pistis)
 
 Code generation often uses random identifiers / numbers to generate identifiers that are free of collisions. These 
 random identifiers make reproducable builds impossible since there is no way to make the randomness deterministic.
@@ -12,13 +12,16 @@ as part of identifiers enabling reproducable builds. Pistis allows passing a pre
 include 'vendor/autoload.php';
 
 use Pistis\PseudoRandom;
+use Pistis\Clock;
 
 var_dump(PseudoRandom::integer());
 var_dump(PseudoRandom::integer());
 var_dump(PseudoRandom::hex());
 var_dump(PseudoRandom::hex());
+var_dump(Clock::unixTimestamp());
 
-echo 'Seed: ' . PseudoRandom::getSeed() . "\n";
+echo 'PRNG seed: ' . PseudoRandom::getSeed() . "\n";
+echo 'Time seed: ' . Clock::getSeed() . "\n";
 ```
 
 Running this with PHP will output something like this:
@@ -28,10 +31,12 @@ int(1625705860186051574)
 int(8240691892729656673)
 string(8) "195251fc"
 string(8) "1cc6a0e8"
-Seed: 1353038704721151717
+int(1510246905)
+PRNG seed: 1353038704721151717
+Time seed: 1510246905
 ```
 
-Re-running the same script with `PISTIS_SEED=1353038704721151717 php example.php` will output the exact same numbers
+Re-running the same script with `PISTIS_SEED=1353038704721151717 PISTIS_TIME=1510246905 php example.php` will output the exact same numbers
 again:
 
 ```
@@ -39,5 +44,7 @@ int(1625705860186051574)
 int(8240691892729656673)
 string(8) "195251fc"
 string(8) "1cc6a0e8"
-Seed: 1353038704721151717
+int(1510246905)
+PRNG seed: 1353038704721151717
+Time seed: 1510246905
 ```

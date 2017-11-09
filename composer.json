@@ -1,6 +1,6 @@
 {
   "name": "lstrojny/pistis",
-  "description": "Seed based pseudo-randomness generation",
+  "description": "Controlled pseudo-randomness and time for PHP",
   "type": "library",
   "require-dev": {
     "phpunit/phpunit": "^4"
