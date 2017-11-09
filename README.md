@@ -42,8 +42,8 @@ PRNG seed: 1353038704721151717
 Time seed: 1510246905
 ```
 
-Re-running the same script with `PISTIS_SEED=1353038704721151717 PISTIS_TIME=1510246905 php example.php` will output the exact same numbers
-again:
+Re-running the same script with `PISTIS_SEED=1353038704721151717 PISTIS_TIME=1510246905 php example.php` will output
+the exact same numbers again:
 
 ```
 int(1625705860186051574)
