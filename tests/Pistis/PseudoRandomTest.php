@@ -2,11 +2,10 @@
 namespace Pistis\Tests;
 
 use OutOfBoundsException;
-use PHPUnit\Framework\TestCase;
 use Pistis\PseudoRandom;
 
 /** @runTestsInSeparateProcesses  */
-class PseudoRandomTest extends TestCase
+class PseudoRandomTest extends AbstractTestCase
 {
     public function testThrowsExceptionIfAlreadySeeded(): void
     {
@@ -46,24 +45,5 @@ class PseudoRandomTest extends TestCase
         putenv('PISTIS_SEED=10');
 
         self::assertSame('4c7b9c7d', PseudoRandom::hex());
-    }
-
-    public function testTrivialCollisions(): void
-    {
-        $found = [];
-
-        for ($a = 0; $a < 1000000000; $a++) {
-            $random = PseudoRandom::integer();
-
-            if (in_array($random, $found, true)) {
-                $this->fail(sprintf('%d generated twice', $random));
-            }
-
-            $found[] = $random;
-
-            if ($a % 1000000 === 0) {
-                echo "Round $a\n";
-            }
-        }
     }
 }
