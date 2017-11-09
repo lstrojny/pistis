@@ -14,14 +14,21 @@ include 'vendor/autoload.php';
 use Pistis\PseudoRandom;
 
 var_dump(PseudoRandom::integer());
-var_dump(PseudoRandom::getSeed());
+var_dump(PseudoRandom::integer());
+var_dump(PseudoRandom::hex());
+var_dump(PseudoRandom::hex());
+
+echo 'Seed: ' . PseudoRandom::getSeed() . "\n";
 ```
 
 Running this with PHP will output something like this:
 
 ```
 int(1625705860186051574)
-int(1353038704721151717)
+int(8240691892729656673)
+string(8) "195251fc"
+string(8) "1cc6a0e8"
+Seed: 1353038704721151717
 ```
 
 Re-running the same script with `PISTIS_SEED=1353038704721151717 php example.php` will output the exact same numbers
@@ -29,5 +36,8 @@ again:
 
 ```
 int(1625705860186051574)
-int(1353038704721151717)
+int(8240691892729656673)
+string(8) "195251fc"
+string(8) "1cc6a0e8"
+Seed: 1353038704721151717
 ```
