@@ -4,7 +4,7 @@ namespace Pistis\Tests;
 use OutOfBoundsException;
 use Pistis\PseudoRandom;
 
-/** @runTestsInSeparateProcesses  */
+/** @runTestsInSeparateProcesses */
 class PseudoRandomTest extends AbstractTestCase
 {
     public function testThrowsExceptionIfAlreadySeeded()
