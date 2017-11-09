@@ -1,21 +1,23 @@
 {
-    "name": "lstroujny/pistis",
-    "description": "Seed based pseudo-randomness generation",
-    "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "^6.4"
-    },
-    "autoload": {
-        "psr-4": {"Pistis\\": "src/Pistis"}
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Lars Strojny",
-            "email": "lars.strojny@internations.org"
-        }
-    ],
-    "require": {
-        "ruafozy/mersenne-twister": "^1.3"
+  "name": "lstroujny/pistis",
+  "description": "Seed based pseudo-randomness generation",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^6.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pistis\\": "src/Pistis"
     }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lars Strojny",
+      "email": "lars.strojny@internations.org"
+    }
+  ],
+  "require": {
+    "ruafozy/mersenne-twister": "^1.3"
+  }
 }
