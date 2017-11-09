@@ -7,7 +7,7 @@ use Pistis\PseudoRandom;
 /** @runTestsInSeparateProcesses  */
 class PseudoRandomTest extends AbstractTestCase
 {
-    public function testThrowsExceptionIfAlreadySeeded(): void
+    public function testThrowsExceptionIfAlreadySeeded()
     {
         PseudoRandom::seed(0);
 
