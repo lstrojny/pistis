@@ -3,7 +3,7 @@
   "description": "Controlled pseudo-randomness and time for PHP",
   "type": "library",
   "require-dev": {
-    "phpunit/phpunit": "^4"
+    "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5"
   },
   "autoload": {
     "psr-4": {
@@ -23,6 +23,7 @@
     }
   ],
   "require": {
+    "php": ">=5.5",
     "ruafozy/mersenne-twister": "^1.3",
     "paragonie/random_compat": "^2.0"
   }
