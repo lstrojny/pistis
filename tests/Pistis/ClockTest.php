@@ -29,6 +29,23 @@ class ClockTest extends AbstractTestCase
         self::assertSame(1, Clock::getSeed());
     }
 
+    public function invalidTimestampProvider()
+    {
+        return [
+            [-1],
+            [2147483648],
+        ];
+    }
+
+    /**
+     * @dataProvider invalidTimestampProvider
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSeedWithInvalidTimestamp($invalidTimestamp)
+    {
+        Clock::seed($invalidTimestamp);
+    }
+
     public function testGetSeedIsImplicit()
     {
         self::assertNotNull(Clock::getSeed());
